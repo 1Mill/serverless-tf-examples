@@ -1,0 +1,8 @@
+# General
+
+# Node
+node_modules
+
+# Terraform
+.terraform
+terraform.tfstate*
