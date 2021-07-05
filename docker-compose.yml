@@ -2,7 +2,7 @@ version: '3'
 
 services:
   terraform:
-    image: hashicorp/terraform:1.0.1
+    build: ./
     environment:
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
