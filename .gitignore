@@ -1,8 +1,11 @@
 # General
+.env
 
 # Node
 node_modules
 
 # Terraform
-.terraform
+.terraform*
 terraform.tfstate*
+
+!.terraform.lock.hcl
