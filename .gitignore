@@ -6,6 +6,7 @@ node_modules
 
 # Terraform
 .terraform*
+builds
 terraform.tfstate*
 
 !.terraform.lock.hcl
