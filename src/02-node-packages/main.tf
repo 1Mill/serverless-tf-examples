@@ -25,9 +25,11 @@ module "aws_lambda" {
 			path = path.module,
 			patterns = [
 				"!.*", // * Exclude everything
-				".*\\.js", // * Add *.js files
-				".*\\.json", // * Add *.json files
+				"index.js",
 				"node_modules/.+", // * Add all non-empty directories and files in /node_modules/
+				"package-lock.json",
+				"package.json",
+				"utils/.+",
 			]
 		},
 	]
