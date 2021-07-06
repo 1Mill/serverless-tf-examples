@@ -26,6 +26,7 @@ module "aws_lambda" {
 			patterns = [
 				"!.*", // * Exclude everything
 				".*\\.js", // * Add *.js files
+				".*\\.json", // * Add *.json files
 				"node_modules/.+", // * Add all non-empty directories and files in /node_modules/
 			]
 		},
