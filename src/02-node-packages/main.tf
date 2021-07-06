@@ -15,7 +15,7 @@ provider "aws" {
 
 module "aws_lambda" {
 	source = "terraform-aws-modules/lambda/aws"
-	version = "~> 2.0"
+	version = "~> 2.5"
 
 	function_name = "nested-js-files"
 	handler = "index.handler"
