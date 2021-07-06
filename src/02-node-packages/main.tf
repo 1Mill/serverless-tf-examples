@@ -21,7 +21,13 @@ module "aws_lambda" {
 	handler = "index.handler"
 	runtime = "nodejs14.x"
 	source_path = [
-		"${path.module}/**/*.js",
-		"${path.module}/index.js",
+		{
+			path = path.module,
+			patterns = [
+				"!.*", // * Exclude everything
+				".*\\.js", // * Add *.js files
+				"node_modules/.+", // * Add all non-empty directories and files in /node_modules/
+			]
+		},
 	]
 }
