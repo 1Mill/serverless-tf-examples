@@ -22,7 +22,7 @@ module "aws_lambda" {
 	runtime = "nodejs14.x"
 	source_path = [
 		{
-			// commands = ["npm install"]
+			commands = ["npm install", ":zip"]
 			path = path.module,
 			patterns = [
 				"!.*", // * Exclude everything
