@@ -17,6 +17,9 @@ module "aws_lambda" {
 	source = "terraform-aws-modules/lambda/aws"
 	version = "~> 2.5"
 
+	environment_variables = {
+		"NODE_ENV" = "production",
+	}
 	function_name = "on-demand-install-with-docker"
 	handler = "index.handler"
 	runtime = "nodejs14.x"
