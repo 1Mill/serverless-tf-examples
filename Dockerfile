@@ -1,4 +1,4 @@
-FROM hashicorp/terraform:1.0.1
+FROM hashicorp/terraform:1.0.2
 
 RUN apk add \
 	npm \
