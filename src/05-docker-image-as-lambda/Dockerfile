@@ -7,4 +7,7 @@ RUN npm install
 
 COPY . .
 
+RUN find . -type d -exec chmod 755 {} \;
+RUN find . -type f -exec chmod 644 {} \;
+
 CMD [ "index.handler" ]
