@@ -1,6 +1,9 @@
 # General
 .env
 
+# AWS Lambda
+output.json
+
 # Node
 node_modules
 
