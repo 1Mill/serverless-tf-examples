@@ -10,3 +10,24 @@ services:
       - $DIR:/app
       - /var/run/docker.sock:/var/run/docker.sock
     working_dir: /app
+
+  localstack:
+    image: localstack/localstack:0.12.15
+    environment:
+      DEFAULT_REGION: us-east-1
+      LAMBDA_DOCKER_NETWORK: lambda-network
+      LAMBDA_EXECUTOR: docker
+      LOCALSTACK_API_KEY: $LOCALSTACK_API_KEY
+      LS_LOG: debug
+      SERVICES: ecr,lambda
+    networks:
+      - lambda-network
+    ports:
+      - 4566:4566
+    volumes:
+      - /tmp/localstack:/tmp/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
+
+networks:
+  lambda-network:
+    external: true
