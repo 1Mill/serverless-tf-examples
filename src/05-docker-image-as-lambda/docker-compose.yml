@@ -4,5 +4,3 @@ services:
   lambda:
     build: ./
     image: localhost:4566/docker.io/library/05-testing-v2
-    ports:
-      - 9000:8080
