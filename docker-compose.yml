@@ -30,4 +30,4 @@ services:
 
 networks:
   lambda-network:
-    external: true
+    name: lambda-network
