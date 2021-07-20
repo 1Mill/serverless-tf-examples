@@ -2,5 +2,5 @@ version: '3.8'
 
 services:
   lambda:
-    build: ./
-    image: dev/06-localstack-docker-lambda
+    build: $DIR
+    image: $FUNCTION_NAME

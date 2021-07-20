@@ -1,11 +1,21 @@
 #!/bin/bash
 
 function build() {
-	local DIR=$1
+	source $(dirname $BASH_SOURCE)/constants.0.bash
 
-	local FILE=$(pwd)/$DIR/docker-compose.yml
+	local CONFIG_FILE_PATH=$(pwd)/$1/$CONFIG_FILENAME
+	source $CONFIG_FILE_PATH
+
+	local FUNCTION_NAME=$FUNCTION_NAME
+
+	local FILE=$(pwd)/$1/docker-compose.yml
 	echo $FILE
-	docker-compose -f $FILE build
+
+	DIR=./ \
+	FUNCTION_NAME=$FUNCTION_NAME \
+	docker-compose \
+		-f $FILE \
+		build
 }
 
 build $1
