@@ -6,7 +6,7 @@ function build() {
 	local CONFIG_FILE_PATH=$(pwd)/$1/$CONFIG_FILENAME
 	source $CONFIG_FILE_PATH
 
-	local FILE=$(dirname $BASH_SOURCE)/docker-compose.yml
+	local FILE=$(dirname $BASH_SOURCE)/build.docker-compose.0.yml
 	local FUNCTION_NAME=$FUNCTION_NAME
 
 	DIR=$(pwd)/$1 \
