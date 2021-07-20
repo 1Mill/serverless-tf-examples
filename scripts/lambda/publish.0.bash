@@ -8,7 +8,6 @@ function publish () {
 	source $CONFIG_FILE_PATH
 
 	local FUNCTION_NAME=$FUNCTION_NAME
-	local IMAGE=$IMAGE
 	local TIMEOUT=${TIMEOUT-3}
 
 	aws lambda delete-function \
@@ -17,7 +16,7 @@ function publish () {
 		--region $LOCALSTACK_REGION
 
 	aws lambda create-function \
-		--code ImageUri=$IMAGE \
+		--code ImageUri=$FUNCTION_NAME \
 		--endpoint $LOCALSTACK_URL \
 		--function-name $FUNCTION_NAME \
 		--package-type Image \
