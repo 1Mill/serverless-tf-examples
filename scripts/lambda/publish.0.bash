@@ -1,11 +1,11 @@
 #!/bin/bash
 
-source $(dirname $BASH_SOURCE)/constants.0.bash
 
 function publish () {
-	local CONFIG_PATH=$(pwd)/$1/lambda.config
+	source $(dirname $BASH_SOURCE)/constants.0.bash
 
-	source $CONFIG_PATH
+	local CONFIG_FILE_PATH=$(pwd)/$1/$CONFIG_FILENAME
+	source $CONFIG_FILE_PATH
 
 	local FUNCTION_NAME=$FUNCTION_NAME
 	local IMAGE=$IMAGE
