@@ -18,7 +18,7 @@ services:
       LAMBDA_DOCKER_NETWORK: lambda-network
       LAMBDA_EXECUTOR: docker
       LOCALSTACK_API_KEY: $LOCALSTACK_API_KEY
-      LS_LOG: debug
+      LS_LOG: trace
       SERVICES: ecr,lambda
     networks:
       - lambda-network
