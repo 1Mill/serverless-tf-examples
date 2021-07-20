@@ -7,3 +7,5 @@ function build() {
 	echo $FILE
 	docker-compose -f $FILE build
 }
+
+build $1
