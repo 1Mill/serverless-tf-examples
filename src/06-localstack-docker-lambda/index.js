@@ -5,9 +5,15 @@ exports.handler = async (event, ctx) => {
 	const uuid = uuidv4()
 
 	console.log('------')
-	console.log({ datetime, uuid })
+	console.log(datetime)
+	console.log(uuid)
 	console.log('------')
-	console.log({ event, ctx })
+	console.log(event)
+	console.log('------')
+	console.log(ctx.awsRequestId)
+	console.log(ctx.functionName)
+	console.log(ctx.functionVersion)
+	console.log(ctx.invokedFunctionArn)
 	console.log('------')
 
 	return { datetime }
