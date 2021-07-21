@@ -10,3 +10,4 @@
 *.tf
 *docker*
 *terraform*
+.env

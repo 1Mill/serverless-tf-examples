@@ -1,6 +1,13 @@
-*
+# TODO: Use whitelist method once bug is fixed
+# TODO: https://github.com/kreuzwerker/terraform-provider-docker/issues/249
+# *
 
-!config.bash
-!index.js
-!package-lock.json
-!package.json
+# !index.js
+# !package-lock.json
+# !package.json
+
+*.md
+*.tf
+*docker*
+*terraform*
+.env
