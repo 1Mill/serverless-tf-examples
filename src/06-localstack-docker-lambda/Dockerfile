@@ -7,6 +7,10 @@ RUN npm install
 
 COPY . .
 
+ENV \
+	NODE_ENV=production \
+	SOME_ENV_VAR=$SOME_ENV_VAR
+
 RUN find . -type d -exec chmod 755 {} \;
 RUN find . -type f -exec chmod 644 {} \;
 
