@@ -13,7 +13,7 @@ function publish () {
 	local CONFIG_FILE_PATH=$(pwd)/$1/$CONFIG_FILENAME
 	source $CONFIG_FILE_PATH
 
-	local ENVIRONMENT=${ENVIRONMENT-"{}"}
+	local DEV_ENVIRONMENT=${DEV_ENVIRONMENT-"{}"}
 	local FUNCTION_NAME=$FUNCTION_NAME
 	local TIMEOUT=${TIMEOUT-3}
 
@@ -33,7 +33,7 @@ function publish () {
 
 	aws lambda update-function-configuration \
 		--endpoint $LOCALSTACK_URL \
-		--environment "Variables=$ENVIRONMENT" \
+		--environment "Variables=$DEV_ENVIRONMENT" \
 		--function-name $FUNCTION_NAME \
 		--region $LOCALSTACK_REGION
 }
