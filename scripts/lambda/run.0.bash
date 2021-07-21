@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function run() {
 	local DIR=$1
 	local VERSION=$2
