@@ -1,6 +1,6 @@
 *
 
+!config.bash
 !index.js
-!lambda.config
 !package-lock.json
 !package.json
