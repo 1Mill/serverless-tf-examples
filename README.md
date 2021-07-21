@@ -3,12 +3,15 @@
 ## 06 Example
 
 ```bash
-./scripts/lambda/setup.0.bash ./src/06-localstack-docker-lambda
+docker-compose up --build localstack
 ```
 
 ```bash
-./scripts/lambda/invoke.0.bash ./src/06-localstack-docker-lambda '
-{"some-data": true}'
+./scripts/lambda/run.0.bash ./src/06-localstack-docker-lambda 0 setup
+```
+
+```bash
+./scripts/lambda/run.0.bash ./src/06-localstack-docker-lambda 0 invoke '{ "some-data": "this is some string", "another value": true}'
 ```
 
 If something is returned from the Lambda after `invoke`, check `output.json`.
