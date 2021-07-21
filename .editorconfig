@@ -9,9 +9,9 @@ indent_style = tab
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{config,md,json,yaml,yml}]
+[*.{md,json,yaml,yml}]
 indent_size = 2
 indent_style = space
 
-[*.{config,bash,bashrc,hcl,pem,sh}]
+[*.{config,bash,bashrc,hcl,pem,sh,tfvars}]
 end_of_line = lf
