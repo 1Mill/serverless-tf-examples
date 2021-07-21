@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 function publish () {
 	source $(dirname $BASH_SOURCE)/constants.0.bash
 
