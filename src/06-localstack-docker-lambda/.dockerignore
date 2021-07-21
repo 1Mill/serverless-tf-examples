@@ -6,8 +6,11 @@
 # !package-lock.json
 # !package.json
 
-*.md
+*.terraform*
 *.tf
-*docker*
-*terraform*
+*.tfstate*
+*.tfvar
+.dockerignore
 .env
+Dockerfile
+node_modules
