@@ -13,18 +13,19 @@ terraform {
 	}
 }
 
-provider "aws" {
-	region = "us-east-1"
+variable "FUNCTION_NAME" { type = string }
+variable "TIMEOUT" {
+	default = 3
+	type = number
 }
 
-locals {
-	name = "TODO"
-}
+provider "aws" { region = "us-east-1" }
+
 module "docker_image" {
 	source = "terraform-aws-modules/lambda/aws//modules/docker-build"
 
 	create_ecr_repo = true
-	ecr_repo = local.name
+	ecr_repo = var.FUNCTION_NAME
 	image_tag = "1.0.0"
 	source_path = abspath(path.module)
 }
@@ -34,9 +35,11 @@ module "aws_lambda" {
 
 	environment_variables = {
 		"NODE_ENV" = "production"
+		"SOME_ENV_VAR" = "my-prod-var"
 	}
 	create_package = false
-	function_name = local.name
+	function_name = var.FUNCTION_NAME
 	image_uri = module.docker_image.image_uri
 	package_type = "Image"
+	timeout = var.TIMEOUT
 }
