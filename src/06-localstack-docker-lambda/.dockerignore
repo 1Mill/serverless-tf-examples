@@ -6,11 +6,14 @@
 # !package-lock.json
 # !package.json
 
-*.terraform*
-*.tf
-*.tfstate*
-*.tfvar
+.terraform
+node_modules
 .dockerignore
 .env
+.terraform.lock.hcl
+.terraform.tfstate.lock.info
+config.auto.tfvars
 Dockerfile
-node_modules
+main.tf
+terraform.tfstate
+terraform.tfstate.backup
