@@ -1,0 +1,19 @@
+# TODO: Use whitelist method once bug is fixed
+# TODO: https://github.com/kreuzwerker/terraform-provider-docker/issues/249
+# *
+
+# !index.js
+# !package-lock.json
+# !package.json
+
+.terraform
+node_modules
+.dockerignore
+.env
+.terraform.lock.hcl
+.terraform.tfstate.lock.info
+config.auto.tfvars
+Dockerfile
+main.tf
+terraform.tfstate
+terraform.tfstate.backup
