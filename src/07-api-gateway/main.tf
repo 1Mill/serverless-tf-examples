@@ -40,21 +40,22 @@ module "aws_lambda" {
 	timeout = var.TIMEOUT
 }
 
-// module "apigateway" {
-// 	source  = "terraform-aws-modules/apigateway-v2/aws"
-// 	version = "~> 1.1"
+module "apigateway" {
+	source  = "terraform-aws-modules/apigateway-v2/aws"
+	version = "~> 1.1"
 
-// 	domain_name = "www.erikekberg.info"
-// 	domain_name_certificate_arn = "arn:aws:acm:us-east-1:076550078650:certificate/ce48f9e5-97b4-4da8-8e07-18a393b6a74f"
-// 	name = "07-api-getway"
-// 	protocol_type = "HTTP"
+	// https://medium.com/swlh/register-an-external-domain-with-aws-api-gateway-using-an-aws-certificate-414a1568d162
+	domain_name = "erikekberg.info"
+	domain_name_certificate_arn = "arn:aws:acm:us-east-1:076550078650:certificate/ce48f9e5-97b4-4da8-8e07-18a393b6a74f"
+	name = "07-api-getway"
+	protocol_type = "HTTP"
 
-// 	integrations = {
-// 		"$default" = {
-// 			lambda_arn = module.aws_lambda.lambda_function_arn
-// 		}
-// 	}
-// }
+	// integrations = {
+	// 	"$default" = {
+	// 		lambda_arn = module.aws_lambda.lambda_function_arn
+	// 	}
+	// }
+}
 
 // output "apigatewayv2_api_api_endpoint" {
 // 	value = module.apigateway.apigatewayv2_api_api_endpoint
