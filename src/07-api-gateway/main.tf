@@ -40,6 +40,16 @@ module "aws_lambda" {
 	timeout = var.TIMEOUT
 }
 
+module "aws_lambda" {
+	source = "clickflow/lambda/docker"
+	version = "~> 1.0"
+
+	environment_variables = {}
+	function_name = var.FUNCTION_NAME
+	source_path = "${path.module}/lambda"
+	timeout = 3
+}
+
 module "apigateway" {
 	source  = "terraform-aws-modules/apigateway-v2/aws"
 	version = "~> 1.1"
