@@ -17,7 +17,7 @@ module "docker_image" {
 
 	create_ecr_repo = true
 	ecr_repo = local.config.FUNCTION_NAME
-	image_tag = "0.0.0"
+	image_tag = "0.0.1"
 	source_path = abspath(path.module)
 }
 module "aws_lambda" {
