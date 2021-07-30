@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG_FILENAME=config.auto.tfvars
+CONFIG_FILENAME=config.bash
 ENV_FILENAME=.env
 
 LOCALSTACK_REGION=us-east-1
