@@ -1,4 +1,6 @@
 .dockerignore
+.env
 Dockerfile
 config.bash
 main.tf
+node_modules
