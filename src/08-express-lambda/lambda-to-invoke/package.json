@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "aws4": "^1.11.0"
+    "aws4": "^1.11.0",
+    "node-fetch": "^2.6.1"
   }
 }
